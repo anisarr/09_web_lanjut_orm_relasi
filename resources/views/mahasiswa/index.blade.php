@@ -71,7 +71,7 @@
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete</button>
-                <a type="button" class="btn btn-warning" href="{{ route('mahasiswa.krs' , $Mahasiswa->Nim) }}">Nilai</a>
+                <a type="button" class="btn btn-warning" href="{{ route('mahasiswa.krs' , $Mahasiswa->id) }}">Nilai</a>
              </form>
             </td>
         </tr>

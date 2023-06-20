@@ -112,16 +112,17 @@ class MahasiswaController extends Controller
     public function destroy(int $id)
     {
         // dd(Mahasiswa::where('Nim', '=', $id)->first());
-        Mahasiswa::where('Nim','=',$id)->delete();
+        Mahasiswa::where('id','=',$id)->delete();
         return redirect()
         ->route('mahasiswa.index')
         ->with ('deleted', 'Mahasiswa Berhasil Dihapus');
     }
 
-    public function krs($Nim)
+    public function krs(int $Nim)
     {
-        $Mahasiswa = Mahasiswa::with('kelas', 'matakuliah')->where('Nim', $Nim)->first();
+        $Mahasiswa = Mahasiswa::with('kelas', 'matakuliah')->where('id', $Nim)->first();
 
-        return view('mahasiswa.krs', compact('Mahasiwa'));
+        return view('mahasiswa.krs', compact('Mahasiswa'));
     }
+
 }

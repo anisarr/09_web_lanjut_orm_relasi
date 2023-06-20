@@ -20,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($Mahasiswa->$Matakuliah as $nilai)
+        @foreach ($Mahasiswa->matakuliah as $nilai)
             <tr>
                 <td>{{ $nilai->nama_matkul }}</td>
                 <td>{{ $nilai->sks }}</td>
